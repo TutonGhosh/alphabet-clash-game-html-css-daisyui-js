@@ -8,11 +8,109 @@
     <!-- DaisyUI & TailwindCSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
     <!-- Styles -->
     <link rel="stylesheet" href="Styles/style.css">
 
 </head>
 <body>
-    
+    <main class="min-h-screen bg-[#1E1E1E] bg-[url('images/background.png')] bg-no-repeat bg-center">
+        <!-- Home -->
+        <section id="home-screen" class="">
+            <div class="min-h-screen flex justify-center items-center">
+                <div class="text-white flex flex-col items-center gap-10">
+                    <h1 class="text-9xl font-anton font-normal">ALPHABET CLASH</h1>
+                    <p class="text-2xl">Unleash Your Keyboard Kung Fu : Click “Play Now” to Play</p>
+                    <button class="btn shadow-none border-none text-xl font-bold text-black">Play Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playground -->
+        <section id="playground-screen" class="hidden">
+            <div class="flex flex-col items-center space-y-20">
+                <!-- Screen -->
+                <div class="flex flex-col items-center">
+                    <div class="w-[900px] h-[400px] mt-16 bg-[#FFFFFF80] border-[15px] border-[#27272a] rounded-xl">
+                        <div class="flex justify-center text-white -mt-3">
+                            <p class="font-bold bg-[#27272a] p-2 px-5 rounded-b-xl">Don't watch keyboard  while playing...</p>
+                        </div>
+                        <div class="flex justify-center items-center h-full">
+                            <p class="text-[250px] font-bold">Y</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Keyboard -->
+                <div class="">
+                    <div class="my-1 flex w-full justify-center gap-1 space-x-1 space-y-1">
+                        <kbd class="kbd kbd-xl text-2xl">q</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">w</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">e</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">r</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">t</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">y</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">u</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">i</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">o</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">p</kbd>
+                    </div>
+                    <div class="my-1 flex w-full justify-center gap-1 space-x-1 space-y-1">
+                        <kbd class="kbd kbd-xl text-2xl">a</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">s</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">d</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">f</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">g</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">h</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">j</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">k</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">l</kbd>
+                    </div>
+                    <div class="my-1 flex w-full justify-center gap-1 space-x-1 space-y-1">
+                        <kbd class="kbd kbd-xl text-2xl">z</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">x</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">c</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">v</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">b</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">n</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">m</kbd>
+                        <kbd class="kbd kbd-xl text-2xl">/</kbd>
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="flex justify-between w-[1000px]">
+                    <!-- Life Button -->
+                    <div>
+                        <button class="btn btn-neutral border-0 shadow-none flex items-center bg-purple-700 rounded-full">
+                            <p class="text-xl text-white font-bold">Life</p>
+                            <img src="images/life.png" alt="">
+                            <p class="text-xl text-white font-bold">1</p>
+                        </button>
+                    </div>
+                    <!-- Score Button -->
+                    <div>
+                        <button class="btn btn-neutral border-0 shadow-none flex items-center bg-purple-700 rounded-full">
+                            <p class="text-xl text-white font-bold">Score</p>
+                            <img src="images/score.png" alt="">
+                            <p class="text-xl text-white font-bold">1</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Score -->
+        <section id="score-screen" class="hidden">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="text-center space-y-5 bg-[#FFFFFF33] p-10 rounded-lg">
+                    <h1 class="text-5xl font-extrabold text-white">Score:
+                        <span>14</span>
+                    </h1>
+                    <button class="btn btn-neutral shadow-none border-none bg-white text-black text-xl font-bold">Play
+                        Again</button>
+                    <p class="text-white text-lg font-semibold">Practice will make you Pro</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
