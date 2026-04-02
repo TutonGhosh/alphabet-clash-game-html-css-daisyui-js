@@ -15,3 +15,8 @@ function setElementBgColor(elementID)
     const element = document.getElementById(elementID);
     element.classList.add('bg-yellow-300')
 }
+function removeElementBgColor(elementID)
+{
+    const element = document.getElementById(elementID);
+    element.classList.remove('bg-yellow-300')
+}
