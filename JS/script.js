@@ -15,31 +15,63 @@ function continueGame()
     displayAlphabet.innerText = alphabet;
     setElementBgColor(alphabet);
 }
+function gameOver()
+{
+    const playgroundScreen = document.getElementById('playground-screen');
+    playgroundScreen.classList.add('hidden');
+
+    const scoreScreen = document.getElementById('score-screen');
+    scoreScreen.classList.remove('hidden');
+
+    const lastScoreText = document.getElementById('current-score');
+    const lastScore = lastScoreText.innerText;
+    setTextElementValueByID('last-score', lastScore)
+
+    const currentAlphabet = getElementTextByID('display-alphabet');
+    removeElementBgColor(currentAlphabet);
+}
 
 function handleKeyboardKeyupEvent(event)
 {
     const playerPressed = event.key;
+    if(playerPressed === 'Escape')
+    {
+        gameOver();
+    }
     const displayAlphabetElement = document.getElementById('display-alphabet');
     const displayAlphabet = displayAlphabetElement.innerText;
-    console.log(playerPressed, displayAlphabet);
     
     if(playerPressed === displayAlphabet)
     {
-        const currentScoreElement = document.getElementById('current-score');
-        const currentScoreText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentScoreText);
-        currentScoreElement.innerText = currentScore + 1;
+        const currentScore = getTextElementValueByID('current-score')
+        const updatedScore = currentScore + 1;
+        setTextElementValueByID('current-score', updatedScore);
 
         removeElementBgColor(playerPressed)
         continueGame();
     }
     else
     {
-        const currentlifeElement = document.getElementById('current-life');
-        const currentlifeText = currentlifeElement.innerText;
-        const currentlife = parseInt(currentlifeText);
-        currentlifeElement.innerText = currentlife - 1;
-        const lifeScore = parseInt(currentlifeElement.innerText)
+        const currentLife =getTextElementValueByID('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueByID('current-life', updatedLife);
+        if(updatedLife === 0)
+        {
+            gameOver();
+        }
     }
 }
 document.addEventListener('keyup', handleKeyboardKeyupEvent);
+
+function playAgain()
+{
+    const scoreScreen = document.getElementById('score-screen');
+    scoreScreen.classList.add('hidden');
+    const playgroundScreen = document.getElementById('playground-screen');
+    playgroundScreen.classList.remove('hidden');
+
+    setTextElementValueByID('current-score', 0);
+    setTextElementValueByID('current-life', 3);
+
+    continueGame()
+}
